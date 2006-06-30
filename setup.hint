@@ -3,7 +3,7 @@ requires: OpenSP gawk groff perl sgml-common
 sdesc: "LinuxDoc SGML DTD formatters"
 ldesc: "The linuxdoc suite is a collection of text formatters which
 understands a LinuxDoc DTD SGML source file. Each formatter (or
-"back-end") renders the source file into a variety of output formats,
+'back-end') renders the source file into a variety of output formats,
 including HTML, TeX, DVI, PostScript, plain text, and groff(1) source in
 manual-page format. The linuxdoc suite is provided for backward
 compatibility, because there are still many useful documents written in
