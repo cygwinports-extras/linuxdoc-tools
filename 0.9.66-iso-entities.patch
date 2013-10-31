@@ -1,0 +1,11 @@
+--- origsrc/linuxdoc-tools-0.9.66/perl5lib/LinuxDocTools.pm	2009-11-09 13:58:25.000000000 -0600
++++ src/linuxdoc-tools-0.9.66/perl5lib/LinuxDocTools.pm	2010-03-24 20:25:20.279655200 -0500
+@@ -417,7 +417,7 @@ sub process_options {
+   # Setup the SGML environment.`iso-entites' sub directory will be removed for Debian package
+   # and entities from Debian sgml-data package used if present (first entry below).
+   my @sgmlcatalogs = ( "$main::prefix/share/sgml/entities/sgml-iso-entities-8879.1986/catalog",
+-		       "$main::prefix/share/sgml/iso-entities-8879.1986/iso-entities.cat",
++		       "$main::prefix/share/sgml/sgml-iso-entities-8879.1986/catalog",
+ 		       "$main::DataDir/linuxdoc-tools.catalog",
+ 		       "/etc/sgml.catalog");
+ 

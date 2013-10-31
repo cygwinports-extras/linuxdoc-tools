@@ -1,0 +1,36 @@
+inherit perl
+
+NAME="linuxdoc-tools"
+VERSION=0.9.66
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="LinuxDoc SGML DTD formatters"
+DESCRIPTION="The linuxdoc suite is a collection of text formatters which
+understands a LinuxDoc DTD SGML source file. Each formatter (or backend)
+renders the source file into a variety of output formats, including HTML,
+TeX, DVI, PostScript, plain text, and groff(1) source in manual-page format.
+The linuxdoc suite is provided for backward compatibility, because there are
+still many useful documents written in LinuxDoc DTD sgml source."
+REQUIRES="OpenSP gawk groff texlive-collection-latexrecommended"
+HOMEPAGE="http://packages.qa.debian.org/l/linuxdoc-tools.html"
+SRC_URI="mirror://debian/pool/main/l/${NAME}/${NAME}_${VERSION}.tar.gz"
+PATCH_URI="
+	0.9.66-broken-dvi-ps.patch
+	0.9.66-iso-entities.patch
+"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf --with-installed-iso-entities
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	export SGML_CATALOG_FILES="/usr/share/sgml/sgml-iso-entities-8879.1986/catalog"
+	cyginstall
+
+	insinto /usr/share/texmf/tex/latex/linuxdoc
+	doins ${S}/tex/*.sty
+}
