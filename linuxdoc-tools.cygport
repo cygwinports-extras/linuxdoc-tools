@@ -2,7 +2,7 @@ inherit perl
 
 NAME="linuxdoc-tools"
 VERSION=0.9.69
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="LinuxDoc SGML DTD formatters"
 DESCRIPTION="The linuxdoc suite is a collection of text formatters which
